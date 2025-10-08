@@ -1,0 +1,142 @@
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styling - Round and Zoomed */
+.logo {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.lang-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.language-selector.active .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.lang-option.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.lang-flag {
+    font-size: 20px;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .header {
+    direction: rtl;
+}
+
+[dir="rtl"] .main-menu {
+    direction: rtl;
+}
+
+[dir="rtl"] .about-main {
+    direction: rtl;
+}
+
+[dir="rtl"] .contact-container {
+    direction: rtl;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .language-selector {
+        order: -1;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    
+    .lang-dropdown {
+        right: auto;
+        left: 0;
+    }
+    
+    [dir="rtl"] .lang-dropdown {
+        left: auto;
+        right: 0;
+    }
+}
